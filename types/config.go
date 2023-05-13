@@ -391,10 +391,6 @@ func VetConfig(flagSet GinkgoFlagSet, suiteConfig SuiteConfig, reporterConfig Re
 		errors = append(errors, GinkgoErrors.MissingParallelHostConfiguration())
 	}
 
-	if suiteConfig.DryRun && suiteConfig.ParallelTotal > 1 {
-		errors = append(errors, GinkgoErrors.DryRunInParallelConfiguration())
-	}
-
 	if suiteConfig.GracePeriod <= 0 {
 		errors = append(errors, GinkgoErrors.GracePeriodCannotBeZero())
 	}
